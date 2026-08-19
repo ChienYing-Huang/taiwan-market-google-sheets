@@ -1,0 +1,15 @@
+# Local/editor files
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+
+# Apps Script local tooling
+.clasp.json
+node_modules/
+
+# Secrets / local configuration
+.env
+.env.*
+secrets.*
+credentials.*

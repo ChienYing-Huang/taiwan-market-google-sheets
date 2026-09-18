@@ -1,0 +1,181 @@
+PASS 09-16 successful September data survives unavailable August (HTTP 307)
+PASS exact-date repair 09-16 OHLC and volume
+PASS 307 and invalid JSON retry then official alternate endpoint
+PASS total failure is surfaced, never silently use previous-month stale data
+PASS nested tables accepted; wrong-month rows rejected
+PASS empty current month alone allows previous month lookup
+PASS seasonal ATM reference changes on September settlement day
+PASS listed strike fallback uses raw reference, equal distance picks higher, missing sides rejected
+PASS official 09-16 full option page: OI, ATM, IV and historical path
+PASS official 09-17 full option page: OI, ATM, IV and historical path
+{
+  "tests": 10,
+  "results": [
+    {
+      "date": "2026-09-16",
+      "spot": {
+        "date": "2026-09-16",
+        "open": 45546.56,
+        "high": 46077.82,
+        "low": 45546.56,
+        "close": 45848.9,
+        "volume": 8352608,
+        "product": "大盤現貨指數",
+        "contractMonth": "",
+        "source": "臺灣證券交易所－歷史資料"
+      },
+      "options": {
+        "date": "2026-09-16",
+        "monthly": {
+          "contract": "202610",
+          "expiryDate": "2026-10-21",
+          "callStrike": 47000,
+          "callOpenInterest": 760,
+          "putStrike": 40000,
+          "putOpenInterest": 653,
+          "atmStrike": 45800,
+          "atmUnderlying": 45848.9,
+          "ivUnderlying": 45848.9,
+          "atmUnderlyingSource": "大盤現貨收盤",
+          "callLastPrice": 1450,
+          "putLastPrice": 1210,
+          "callIvPrice": 1450,
+          "putIvPrice": 1210,
+          "ivPremiumSource": "最後成交價",
+          "ivTradingDayUnits": 22.63,
+          "ivAnnualTradingDays": "243",
+          "callIv": 25.56,
+          "putIv": 22.13
+        },
+        "weeklyWednesday": {
+          "contract": "202609W4",
+          "expiryDate": "2026-09-23",
+          "callStrike": 52000,
+          "callOpenInterest": 913,
+          "putStrike": 45000,
+          "putOpenInterest": 456,
+          "atmStrike": 45850,
+          "atmUnderlying": 45848.9,
+          "ivUnderlying": 45848.9,
+          "atmUnderlyingSource": "大盤現貨收盤",
+          "callLastPrice": 530,
+          "putLastPrice": 520,
+          "callIvPrice": 530,
+          "putIvPrice": 520,
+          "ivPremiumSource": "最後成交價",
+          "ivTradingDayUnits": 5.63,
+          "ivAnnualTradingDays": "243",
+          "callIv": 19.06,
+          "putIv": 18.66
+        },
+        "weeklyFriday": {
+          "contract": "202609F3",
+          "expiryDate": "2026-09-18",
+          "callStrike": 48500,
+          "callOpenInterest": 1129,
+          "putStrike": 42500,
+          "putOpenInterest": 1116,
+          "atmStrike": 45850,
+          "atmUnderlying": 45848.9,
+          "ivUnderlying": 45848.9,
+          "atmUnderlyingSource": "大盤現貨收盤",
+          "callLastPrice": 428,
+          "putLastPrice": 378,
+          "callIvPrice": 428,
+          "putIvPrice": 378,
+          "ivPremiumSource": "最後成交價",
+          "ivTradingDayUnits": 2.63,
+          "ivAnnualTradingDays": "243",
+          "callIv": 22.52,
+          "putIv": 19.84
+        },
+        "atmComplete": true,
+        "atmWarning": "",
+        "source": "臺灣期貨交易所官網－選擇權完整日盤行情；IV依Black-Scholes反推（交易日年化、最後成交價）"
+      }
+    },
+    {
+      "date": "2026-09-17",
+      "spot": {
+        "date": "2026-09-17",
+        "open": 45936.11,
+        "high": 46874.84,
+        "low": 45936.11,
+        "close": 46288,
+        "volume": 10710347,
+        "product": "大盤現貨指數",
+        "contractMonth": "",
+        "source": "臺灣證券交易所－歷史資料"
+      },
+      "options": {
+        "date": "2026-09-17",
+        "monthly": {
+          "contract": "202610",
+          "expiryDate": "2026-10-21",
+          "callStrike": 47000,
+          "callOpenInterest": 800,
+          "putStrike": 40000,
+          "putOpenInterest": 933,
+          "atmStrike": 46300,
+          "atmUnderlying": 46288,
+          "ivUnderlying": 46288,
+          "atmUnderlyingSource": "大盤現貨收盤",
+          "callLastPrice": 1530,
+          "putLastPrice": 1190,
+          "callIvPrice": 1530,
+          "putIvPrice": 1190,
+          "ivPremiumSource": "最後成交價",
+          "ivTradingDayUnits": 21.63,
+          "ivAnnualTradingDays": "243",
+          "callIv": 27.88,
+          "putIv": 21.49
+        },
+        "weeklyWednesday": {
+          "contract": "202609W4",
+          "expiryDate": "2026-09-23",
+          "callStrike": 52000,
+          "callOpenInterest": 1049,
+          "putStrike": 45000,
+          "putOpenInterest": 977,
+          "atmStrike": 46300,
+          "atmUnderlying": 46288,
+          "ivUnderlying": 46288,
+          "atmUnderlyingSource": "大盤現貨收盤",
+          "callLastPrice": 478,
+          "putLastPrice": 444,
+          "callIvPrice": 478,
+          "putIvPrice": 444,
+          "ivPremiumSource": "最後成交價",
+          "ivTradingDayUnits": 4.63,
+          "ivAnnualTradingDays": "243",
+          "callIv": 18.99,
+          "putIv": 17.18
+        },
+        "weeklyFriday": {
+          "contract": "202609F3",
+          "expiryDate": "2026-09-18",
+          "callStrike": 48200,
+          "callOpenInterest": 3709,
+          "putStrike": 46000,
+          "putOpenInterest": 2273,
+          "atmStrike": 46300,
+          "atmUnderlying": 46288,
+          "ivUnderlying": 46288,
+          "atmUnderlyingSource": "大盤現貨收盤",
+          "callLastPrice": 217,
+          "putLastPrice": 239,
+          "callIvPrice": 217,
+          "putIvPrice": 239,
+          "ivPremiumSource": "最後成交價",
+          "ivTradingDayUnits": 1.63,
+          "ivAnnualTradingDays": "243",
+          "callIv": 14.74,
+          "putIv": 15.4
+        },
+        "atmComplete": true,
+        "atmWarning": "",
+        "source": "臺灣期貨交易所官網－選擇權完整日盤行情；IV依Black-Scholes反推（交易日年化、最後成交價）"
+      }
+    }
+  ]
+}

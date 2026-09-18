@@ -30,3 +30,9 @@ v2.1.2 曾把 W2 到期後的週三 W 選擇直接跳至 W4。v2.1.4 將此規�
 
 ## D009 — OneDrive integration remains experimental
 曾完成 Microsoft Graph OneDrive Excel 同步原型，但因整合成本考量未納入正式版。原型保留於 experimental branch，正式主線維持 Google Sheets；本機 Excel／LibreOffice 可改由 Google Sheets 發布 CSV 的方式讀取。
+
+## 2026-09-18：v2.1.5 季節切換與實際掛牌
+
+依本次使用者確認，修訂 v2.1 的「5–9 月用期貨」為「5 月起至 9 月結算前用期貨；9 月結算當日起用現貨」。原決策保留為歷史，不追溯改寫。
+保留 50 點目標；目標未掛牌時，依各契約 Call／Put 共同掛牌履約價選距原始基準最近者，等距取高。未成交不作為改選較遠履約價的理由。
+本月已有有效 OHLC 時不再查上月；本月請求全面失敗不以舊月掩蓋。只有確實空月份才退回上月。

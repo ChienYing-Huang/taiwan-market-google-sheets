@@ -4,7 +4,7 @@ Google Apps Script 專案，用於自動蒐集並整合臺灣股市／期貨／�
 
 ## Current stable release
 
-**v2.1.4**
+**v2.1.5**
 
 主要功能：
 
@@ -54,3 +54,9 @@ Git history 另外保留每個正式版本的 commit 與 tag，可直接在 GitH
 ## License
 
 目前尚未指定開源授權。若 repository 未來設為 public，建議在確認授權需求後再加入 LICENSE。
+
+## v2.1.5 驗證
+
+升級與歷史回填方式請見 [v2.1.5 升級說明](docs/releases/v2.1.5-upgrade.md)。
+
+離線回歸測試：`node tests/regression.cjs`（使用 tests/fixtures 官方行情快照，不寫入線上試算表）。
